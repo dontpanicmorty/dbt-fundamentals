@@ -4,14 +4,18 @@ models:
   - name: stage_payments
     columns:
       - name: payment_id
+        description: The primary key for stage_payments.
         tests:
           - unique
           - not_null
       - name: order_id
+        description: The foreign key to stage_orders.order_id.
+        tests:
           - not_null
       - name: status
+        description: '{{ doc("payment_status")}}'
         tests:
           - accepted_values:
               values:
-                - fail
                 - success
+                - fail
