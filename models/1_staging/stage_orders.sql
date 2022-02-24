@@ -1,11 +1,5 @@
 with orders as (
 
-	{{ source('jaffle_shop', 'orders') }}
-
-),
-
-transformed as (
-
 	select
 		  id as order_id
 		, user_id as customer_id
@@ -16,4 +10,4 @@ transformed as (
 	
 )
 
-select * from transformed
+select * from orders

@@ -1,10 +1,4 @@
-with as payments (
-
-	{{ source('stripe', 'payment') }}
-
-),
-
-transformed as (
+with payments as (
 
 	select
 		  id as payment_id
@@ -18,4 +12,4 @@ transformed as (
 
 )
 
-select * from transformed
+select * from payments
